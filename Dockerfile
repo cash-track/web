@@ -1,6 +1,9 @@
-FROM nginx:1.15.6-alpine AS web
+FROM nginx:1.15.7-alpine AS web
 
-ADD ./config/host.conf /etc/nginx/conf.d/default.conf
+ARG APP_ENV=production
+ENV APP_ENV ${APP_ENV}
+
+ADD ./config/host.$APP_ENV.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /var/www
 
