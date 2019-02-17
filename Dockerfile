@@ -1,4 +1,4 @@
-FROM nginx:1.15.7-alpine AS web
+FROM nginx:1.15-alpine AS web
 
 ARG APP_ENV=production
 ENV APP_ENV ${APP_ENV}
